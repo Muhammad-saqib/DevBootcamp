@@ -5,15 +5,19 @@
   "main": "server.js",
   "scripts": {
     "test": "npm start",
-    "start": "Node_ENV=production node server",
+    "start": "node server",
     "dev": "nodemon server"
   },
   "author": "M.saqib",
   "license": "MIT",
   "dependencies": {
+    "color": "^3.1.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "geo-coder": "^1.0.2",
+    "mongoose": "^5.11.12",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "slugify": "^1.4.6"
   }
 }

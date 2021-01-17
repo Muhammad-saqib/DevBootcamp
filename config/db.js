@@ -1,12 +1,16 @@
-const mangoose = require('mongoose');
+const mongoose = require('mongoose');
+const { model } = require('../models/Bootcamp');
 
 const connectDB = async () => {
-     const conn = await mangoose.connect(MONGO_URI, {
-          useNewUrlParser: true,
-          useCreateIndex: true,
-          useFindAndModify: false,
-          useUnifiedTopology: true
-     });
-     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+     try {
+
+
+          mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+          //  console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+     } catch (err) {
+          console.log(err)
+     }
+
 
 }
+module.exports = connectDB;
